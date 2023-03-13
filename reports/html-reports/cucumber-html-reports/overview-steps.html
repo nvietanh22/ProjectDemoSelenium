@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.tablesorter.min.js"></script>
+<script src="js/Chart.min.js"></script>
+<script src="js/moment.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"/>
+<link rel="stylesheet" href="css/cucumber.css" type="text/css"/>
+<link rel="stylesheet" href="css/font-awesome.min.css"/>
+<link rel="shortcut icon" href="images/favicon.png"/>
+
+<script>
+$(document).ready(function() {
+    // this will tell tablesorter to try looking for the data-value attribute
+    // if present, it'll sort by that instead
+    // otherwise, it'll sort by the text content of the table cell
+    $("#tablesorter").tablesorter({
+        textAttribute: 'data-value',
+        // ignores the first row of the header, the 'scenario', 'steps', since
+        // sorting those doesn't make sense
+        selectorHeaders: '> thead tr:not(.dont-sort) th',
+        // use a stable sort
+        sortStable: true
+    });
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+<title>Cucumber Reports (no 1) - Steps Overview</title>
+
+</head>
+<body>
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navigation">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse">
+      <p class="navbar-text navbar-left">Cucumber Report</p>
+      <ul class="nav navbar-nav navbar-right">
+        <li role="presentation" ><a href="overview-features.html">Features</a></li>
+        <li role="presentation" ><a href="overview-tags.html">Tags</a></li>
+        <li role="presentation"     class="active" ><a href="overview-steps.html">Steps</a></li>
+        <li role="presentation" ><a href="overview-failures.html">Failures</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<div class="container-fluid">
+  <div class="col-md-5 col-md-offset-1">
+
+<table class="table table-bordered" id="build-info">
+  <thead>
+    <tr>
+      <th>Project</th>
+        <th>Number</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="info">
+      <td>Sample-Cucumber-TestNG</td>
+        <td>1</td>
+      <td>21 Feb 2023, 14:47</td>
+    </tr>
+  </tbody>
+</table>
+
+  </div>
+  <div class="col-md-3 col-md-offset-2">
+  </div>
+</div>
+
+
+<div id="report-lead" class="container-fluid">
+  <div class="col-md-10 col-md-offset-1">
+    <h2>Steps Statistics</h2>
+      <p>The following graph shows step statistics for this build. Below list is based on results.
+ step does not provide information about result then is not listed below.
+ Additionally @Before and @After are not counted because they are part of the scenarios, not steps.</p>
+  </div>
+</div>
+
+<div class="container-fluid" id="report">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+      <table id="tablesorter" class="stats-table table-hover">
+
+        <thead>
+          <tr class="header">
+            <th>Implementation</th>
+            <th>Occurrences</th>
+            <th>Average duration</th>
+            <th>Max duration</th>
+            <th>Total durations</th>
+            <th>Ratio</th>
+          </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+              <td class="location">stepdefs.Log_Step.checkExistInTheEventLogList(java.lang.String)</td>
+              <td>4</td>
+              <td class="duration" data-value="674191425">0.674</td>
+              <td class="duration" data-value="674191425">0.712</td>
+              <td class="duration" data-value="2696765700">2.696</td>
+              <td class="failed">50.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepdefs.Log_Step.checkExistInTheLogList(java.lang.String)</td>
+              <td>6</td>
+              <td class="duration" data-value="72662266">0.072</td>
+              <td class="duration" data-value="72662266">0.083</td>
+              <td class="duration" data-value="435973600">0.435</td>
+              <td class="failed">83.33%</td>
+            </tr>
+            <tr>
+              <td class="location">stepdefs.Log_Step.clickEventLogButton()</td>
+              <td>4</td>
+              <td class="duration" data-value="72555925">0.072</td>
+              <td class="duration" data-value="72555925">0.096</td>
+              <td class="duration" data-value="290223700">0.290</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepdefs.Log_Step.clickLogButton()</td>
+              <td>13</td>
+              <td class="duration" data-value="98199984">0.098</td>
+              <td class="duration" data-value="98199984">0.145</td>
+              <td class="duration" data-value="1276599800">1.276</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepdefs.Log_Step.clickSetupWiseAI()</td>
+              <td>13</td>
+              <td class="duration" data-value="101575161">0.101</td>
+              <td class="duration" data-value="101575161">0.137</td>
+              <td class="duration" data-value="1320477100">1.320</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepdefs.Log_Step.clickSystemLogButton()</td>
+              <td>9</td>
+              <td class="duration" data-value="2071833933">2.071</td>
+              <td class="duration" data-value="2071833933">2.114</td>
+              <td class="duration" data-value="18646505400">18.646</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepdefs.Log_Step.clickToFirstPage()</td>
+              <td>1</td>
+              <td class="duration" data-value="36886300">0.036</td>
+              <td class="duration" data-value="36886300">0.036</td>
+              <td class="duration" data-value="36886300">0.036</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepdefs.Log_Step.clickToLastPage()</td>
+              <td>1</td>
+              <td class="duration" data-value="105538200">0.105</td>
+              <td class="duration" data-value="105538200">0.105</td>
+              <td class="duration" data-value="105538200">0.105</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepdefs.Log_Step.clickToNextPage()</td>
+              <td>1</td>
+              <td class="duration" data-value="2135338400">2.135</td>
+              <td class="duration" data-value="2135338400">2.135</td>
+              <td class="duration" data-value="2135338400">2.135</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepdefs.Log_Step.wiseAiAccessWith(java.lang.String,java.lang.String,java.lang.String)</td>
+              <td>13</td>
+              <td class="duration" data-value="10457302707">10.457</td>
+              <td class="duration" data-value="10457302707">12.700</td>
+              <td class="duration" data-value="135944935200">2:15.944</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepdefs.ServiceHooks.afterHookFunction(io.cucumber.java.Scenario)</td>
+              <td>13</td>
+              <td class="duration" data-value="238542607">0.238</td>
+              <td class="duration" data-value="238542607">0.422</td>
+              <td class="duration" data-value="3101053900">3.101</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">stepdefs.ServiceHooks.initializeTest()</td>
+              <td>13</td>
+              <td class="duration" data-value="4870796307">4.870</td>
+              <td class="duration" data-value="4870796307">9.151</td>
+              <td class="duration" data-value="63320352000">1:3.320</td>
+              <td class="passed">100.00%</td>
+            </tr>
+        </tbody>
+
+        <tfoot class="total">
+          <tr>
+            <td>12</td>
+            <td>91</td>
+            <td class="duration">2.519</td>
+            <td class="duration">2:15.944</td>
+            <td class="duration">3:49.310</td>
+            <td>Totals</td>
+          </tr>
+        </tfoot>
+
+      </table>
+    </div>
+  </div>
+</div>
+
+
+<nav class="navbar navbar-default" id="footer">
+  <div class="container-fluid">
+    <p class="navbar-text navbar-right">
+        <small>generate Cucumber HTML reports via:&nbsp;</small>
+        <a class="navbar-link" href="https://github.com/jenkinsci/cucumber-reports-plugin">Jenkins Plugin</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/cucumber-reporting">Standalone</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/cucumber-sandwich">Sandwich</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/maven-cucumber-reporting">Maven</a>
+        &nbsp;&nbsp;
+    </p>
+  </div>
+</nav>
+
+</body>
+</html>
